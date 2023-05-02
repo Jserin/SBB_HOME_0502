@@ -1,0 +1,21 @@
+// application 어쩌구 설명
+# DATABASE
+spring.h2.console.enabled=true
+// ㄴ H2 콘솔의 접속을 허용할지의 여부
+spring.h2.console.path=/h2-console
+// ㄴ 콘솔 접속을 위한 URL 경로
+spring.datasource.url=jdbc:h2:~/local
+// ㄴ 데이터베이스 접속을 위한 경로
+spring.datasource.driverClassName=org.h2.Driver
+// ㄴ 데이터베이스 접속시 사용하는 드라이버
+spring.datasource.username=sa
+// ㄴ 데이터베이스의 사용자명 디폴트 sa
+spring.datasource.password=
+// ㄴ 데이터베이스의 패스워드
+
+# JPA
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+// ㄴ 데이터베이스 엔진 종류를 설정
+spring.jpa.hibernate.ddl-auto=update
+// ㄴ 엔티티를 기준으로 테이블을 생성하는 규칙 정의
+// ㄴ update = 엔티티의 변경된 부분만 적용

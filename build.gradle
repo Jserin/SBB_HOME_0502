@@ -1,0 +1,39 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.6'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.ll'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	// ㄴ 해당 라이브러리가 컴파일 단계에서만 필요한 경우에 사용
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	// ㄴ 서버 재시작 없이도 클래스 변경시 서버가 자동으로 재기동됨
+	runtimeOnly 'com.h2database:h2'
+	// ㄴ 해당 라이브러리가 런타임시에만 필요한 경우에 사용. conpileOnly도 있음
+	annotationProcessor 'org.projectlombok:lombok'
+	// ㄴ 컴파일 단계에서 애너테이션을 분석하고 처리하기 위해 사용
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// ㄴ JPA 라이브러리 설치
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
