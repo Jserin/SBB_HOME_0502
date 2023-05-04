@@ -1,9 +1,10 @@
-package com.ll.sbb;
+package com.ll.sbb.question;
 
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.ll.sbb.answer.Answer;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

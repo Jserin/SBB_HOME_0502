@@ -1,4 +1,4 @@
-package com.ll.sbb;
+package com.ll.sbb.question;
 
 // 리포지토리를 통해 테이블에 데이터를 저장하거나 조회할 수 있음
 
