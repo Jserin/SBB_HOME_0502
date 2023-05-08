@@ -1,14 +1,16 @@
 package com.ll.sbb;
 
 
-import java.time.LocalDateTime;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 import java.util.Optional;
 
+import com.ll.sbb.Answer.Answer;
+import com.ll.sbb.Answer.AnswerRepository;
+import com.ll.sbb.Question.Question;
+import com.ll.sbb.Question.QuestionRepository;
 import org.junit.jupiter.api.Test;
 // ㄴ JUnit : 테스트코드를 작성하고 실행하기 위해 사용하는 자바의 테스트 프레임워크
 import org.springframework.beans.factory.annotation.Autowired;
