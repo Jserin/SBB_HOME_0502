@@ -15,10 +15,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AnswerController {
     private final QuestionService questionService;
+    private final AnswerService answerService;
 
     @PostMapping("/create/{id}")
+    //ㄴ post요청을 받아들일 경우에 사용 디테일html에 메소드 post로 지정되어있음. get으로 요청하면 오류발생
     public String createAnswer(Model model, @PathVariable("id") Integer id, @RequestParam String content){
+                                                                            //ㄴ textarea의 content와 변수명 동일해야함
         Question question = this.questionService.getQuestion(id);
-        return String.format("redirect:/quewtion/detail/%s", id);
-    } // 답변 컨트롤러 만들기 부터 시작 - 05090015
+        // ㄴ 서비스에서 질문 찾아옴
+        this.answerService.create(question, content);
+        return String.format("redirect:/question/detail/%s", id);
+    }
 }
