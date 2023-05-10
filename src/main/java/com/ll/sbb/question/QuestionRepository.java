@@ -2,6 +2,8 @@ package com.ll.sbb.question;
 
 // 리포지토리를 통해 테이블에 데이터를 저장하거나 조회할 수 있음
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -13,5 +15,6 @@ public interface QuestionRepository extends JpaRepository<Question, Integer> {
     Question findBySubjectAndContent(String subject, String content);
     // ㄴ 제목과 내용으로 데이터 찾기
     List<Question> findBySubjectLike(String subject);
+    Page<Question> findAll(Pageable pageable);
 
 }

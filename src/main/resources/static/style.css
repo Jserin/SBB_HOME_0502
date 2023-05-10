@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'TTWanjudaedunsancheB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+* {
+	font-family: 'TTWanjudaedunsancheB';
+}
+
+.table {
+border-bottom: 1px solid #8c008c;
+padding: 10px;
+text-color : light;
+}
+
+.btn {
+background: #505050;
+color: white;
+}
+
+.table-head {
+background : #483D8B;
+color:white;
+}
