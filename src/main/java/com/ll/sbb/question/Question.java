@@ -3,15 +3,11 @@ package com.ll.sbb.question;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 import com.ll.sbb.answer.Answer;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import com.ll.sbb.user.SiteUser;
+import jakarta.persistence.*;
 // ㄴ 질문이 one
 
 import lombok.Getter;
@@ -43,4 +39,11 @@ public class Question {
     // ㄴ cascade... = 질문을 삭제하면 그에 달린 답변들도 모두 삭제
     private List<Answer> answerList;
     // ㄴ Answer 엔티티 객체로 구성된 answerList를 속성으로 추가
+    @ManyToOne
+    private SiteUser author;
+
+    private LocalDateTime modifyDate;
+
+    @ManyToMany
+    Set<SiteUser> voter;
 }
